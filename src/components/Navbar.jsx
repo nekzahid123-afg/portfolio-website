@@ -35,7 +35,7 @@ export default function Navbar() {
          <NavLink 
            to="/" 
            className={({ isActive }) => 
-             `px-10 pr-10 py-1 rounded  w-30  text-white ${isActive ? 'bg-green-900' : 'bg-green-700'}`
+             `px-10 pr-10 py-1 rounded  w-30  text-white ${isActive ? 'bg-green-600' : 'bg-green-700'}`
            }
          >
            Home
@@ -45,7 +45,7 @@ export default function Navbar() {
          <NavLink 
            to="/contact" 
            className={({ isActive }) => 
-             `px-10 pr-10 py-1 rounded  w-30 rounded text-white ${isActive ? 'bg-green-900' : 'bg-green-700'}`
+             `px-10 pr-10 py-1 rounded  w-30 rounded text-white ${isActive ? 'bg-green-600' : 'bg-green-700'}`
            }
          >
            Contact
@@ -53,7 +53,7 @@ export default function Navbar() {
          <NavLink 
            to="/About" 
            className={({ isActive }) => 
-             `px-10 pr-10 py-1 rounded  w-30 rounded text-white ${isActive ? 'bg-green-900' : 'bg-green-700'}`
+             `px-10 pr-10 py-1 rounded  w-30 rounded text-white ${isActive ? 'bg-green-600' : 'bg-green-700'}`
            }
          >
            About
