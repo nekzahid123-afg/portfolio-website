@@ -1,5 +1,3 @@
-import React from 'react'
-
 function FacebookIcon() {
   return (
     <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
@@ -77,20 +75,20 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="mx-4 grid grid-cols-1 gap-4 bg-gray-900 p-6 text-white md:grid-cols-3 h-50">
+    <footer className="mx-3 grid grid-cols-1 gap-6 bg-gray-900 p-5 text-white sm:mx-4 sm:p-6 md:grid-cols-3">
       <div>
-        <h1 className="font-bold text-2xl">Useful Links</h1>
+        <h1 className="text-xl font-bold sm:text-2xl">Useful Links</h1>
         <p className="mt-3 text-sm text-gray-300">Home | About | Contact</p>
       </div>
 
       <div>
-        <h1 className="font-bold text-2xl">Contact me</h1>
-        <p className="mt-3 text-sm text-gray-300">Whatsapp: 03214755764</p>
-        <p className="text-sm text-gray-300">Gmail: nekzahid123@gmail.com</p>
+        <h1 className="text-xl font-bold sm:text-2xl">Contact me</h1>
+        <p className="mt-3 break-words text-sm text-gray-300">Whatsapp: 03214755764</p>
+        <p className="break-words text-sm text-gray-300">Gmail: nekzahid123@gmail.com</p>
       </div>
 
       <div>
-        <h1 className="font-bold text-2xl">Follow me</h1>
+        <h1 className="text-xl font-bold sm:text-2xl">Follow me</h1>
         <div className="mt-3 flex flex-wrap gap-3">
           {socialLinks.map(({ name, href, Icon, className }) => (
             <a
