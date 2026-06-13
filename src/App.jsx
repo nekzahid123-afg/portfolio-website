@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar"; // Imports your navbar
 import Footer from "./components/Footer";
 import Home from "./pages/Home";       // Example page components
-//import About from "./pages/About";
+import About from "./pages/About";
 //import Contact from "./pages/Contact";
 
 export default function App() {
@@ -17,7 +17,7 @@ export default function App() {
         <Routes>
          <Route path="/" element={<Home />} />
           <Route path="/contact" element={<div className="text-xl">Contact Page (Under Construction)</div>}/>
-          <Route path="/About" element={<div className="text-xl">About Page (Under Construction)</div>}/>
+          <Route path="/About" element={<About/>}/>
           <Route path="/logo.png" element={<div className="text-xl"> (Under Construction)</div>}/>
         </Routes>
       </main>
