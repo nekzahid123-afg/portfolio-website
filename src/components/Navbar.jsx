@@ -2,10 +2,17 @@ import { NavLink } from "react-router-dom";
 import { Search } from "lucide-react"; // Imported the clean icon component
 import  {Link} from  "react-router-dom"
 import logo from "../assets/logo.png" 
+import { useAuth } from "../context/AuthContextValue";
 
 export default function Navbar() {
+  const { currentUser, logout } = useAuth();
+  const navLinkClass = ({ isActive }) =>
+    `rounded px-3 py-2 text-center text-sm leading-tight text-white sm:px-4 lg:px-5 ${
+      isActive ? "bg-green-600" : "bg-green-700"
+    }`;
+
   return (
-    <nav className="m-2 flex flex-col gap-3 bg-gray-800 p-2 text-white sm:flex-row sm:items-center sm:justify-between">
+    <nav className="m-2 flex flex-col gap-3 bg-gray-800 p-2 text-white lg:flex-row lg:items-center lg:justify-between">
       {/* Left side links and Search Bar */}
       <div className="flex min-w-0 items-center gap-2">
          <Link 
@@ -32,33 +39,54 @@ export default function Navbar() {
       </div>
       
       {/* Right side links */}
-      <div className="grid grid-cols-3 gap-2 sm:flex sm:items-center">
+      <div className="flex flex-wrap items-center gap-2">
          <NavLink 
            to="/" 
-           className={({ isActive }) => 
-             `rounded px-3 py-1 text-center text-sm text-white sm:w-30 sm:px-8 sm:text-base ${isActive ? 'bg-green-600' : 'bg-green-700'}`
-           }
+           className={navLinkClass}
          >
            Home
          </NavLink>
       
       
          <NavLink 
-           to="/contact" 
-           className={({ isActive }) => 
-             `rounded px-3 py-1 text-center text-sm text-white sm:w-30 sm:px-8 sm:text-base ${isActive ? 'bg-green-600' : 'bg-green-700'}`
-           }
+           to="/WriteBlog" 
+           className={navLinkClass}
          >
-           Contact
+         WriteBlog
          </NavLink>
          <NavLink 
            to="/About" 
-           className={({ isActive }) => 
-             `rounded px-3 py-1 text-center text-sm text-white sm:w-30 sm:px-8 sm:text-base ${isActive ? 'bg-green-600' : 'bg-green-700'}`
-           }
+           className={navLinkClass}
          >
            About
          </NavLink>
+         <NavLink 
+           to="/Blogs" 
+           className={navLinkClass}
+         >
+          Blogs 
+         </NavLink>
+         <NavLink 
+           to="/AdminApprove" 
+           className={navLinkClass}
+         >
+           AdminApprove
+         </NavLink>
+          {currentUser ? (
+            <button
+              onClick={logout}
+              className="rounded bg-green-700 px-3 py-2 text-center text-sm leading-tight text-white sm:px-4 lg:px-5"
+            >
+              Logout
+            </button>
+          ) : (
+            <NavLink 
+              to="/auth" 
+              className={navLinkClass}
+            >
+              Login
+            </NavLink>
+          )}
       </div>
     </nav>
   );

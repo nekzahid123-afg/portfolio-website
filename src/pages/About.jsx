@@ -1,8 +1,12 @@
-import React from 'react'
+import Carousel from '../components/Carousel'
 
-export default function () {
+export default function About({ mediaItems }) {
   return (
     <div>
+       {/*Image carousel*/}
+     <div className="flex bg-blue-200">
+         <Carousel mediaItems={mediaItems} />
+     </div>
       <div>
          <h1 className="font-bold text-center text-4xl underline decoration-black" style={{ fontFamily: '"Arial Black", Arial, sans-serif' }}>
           My Technical Skills</h1>
@@ -48,9 +52,9 @@ export default function () {
          Learners access the lectures and other uploaded contents. <br></br>
             
         </p>
-
-      {/*Personal and  Social Life */}
-      </div>
+     </div>
+    
+        {/*Personal and  Social Life */}
       <div className='pt-10'>
         <h1 className="font-bold text-center text-4xl underline decoration-black" style={{ fontFamily: '"Arial Black", Arial, sans-serif' }}>
           My Early Life and Education Upto to Now</h1>
