@@ -6,6 +6,7 @@ import { AuthProvider } from "./context/AuthContext";
 import Auth from "./pages/Auth";
 //console.log("Firebase connected:", auth.app.name);
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -37,17 +38,21 @@ export default function App() {
       <Router>
         <div className="flex min-h-screen flex-col">
           <Navbar />
-          <main className="w-full flex-1 px-3 pt-1 pb-6 sm:px-4 sm:pt-4">
+          <main className="w-full flex-1 px-0 pt-1 pb-0 sm:pt-4">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/Auth" element={<Auth />} />
               <Route path="/auth" element={<Auth />} />
+              <Route path="/Auth" element={<Navigate to="/auth" replace />} />
 
-              <Route path="/WriteBlog" element={<WriteBlog />} />
-              <Route path="/About" element={<About mediaItems={mediaItems} />} />
+              <Route path="/writeblog" element={<WriteBlog />} />
+              <Route path="/WriteBlog" element={<Navigate to="/writeblog" replace />} />
+              <Route path="/about" element={<About mediaItems={mediaItems} />} />
+              <Route path="/About" element={<Navigate to="/about" replace />} />
               <Route path="/logo.png" element={<div className="text-xl">(Under Construction)</div>} />
-              <Route path="/Blogs" element={<Blogs />} />
-              <Route path="/AdminApprove" element={<AdminApprove />} />
+              <Route path="/blogs" element={<Blogs />} />
+              <Route path="/Blogs" element={<Navigate to="/blogs" replace />} />
+              <Route path="/adminapprove" element={<AdminApprove />} />
+              <Route path="/AdminApprove" element={<Navigate to="/adminapprove" replace />} />
             </Routes>
           </main>
           <Footer />

@@ -83,7 +83,7 @@ export default function WriteBlog() {
 
         <button
           type="submit"
-          className="bg-gray-800 text-white py-2 rounded hover:bg-gray-700"
+          className="bg-green-800 text-white py-2 rounded hover:bg-gray-700"
         >
           Submit for Approval
         </button>

@@ -75,7 +75,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="mx-3 grid grid-cols-1 gap-6 bg-gray-900 p-5 text-white sm:mx-4 sm:p-6 md:grid-cols-3">
+    <footer className="grid grid-cols-1 gap-8 bg-gray-900 px-5 py-8 text-white sm:px-8 sm:py-10 md:grid-cols-3">
       <div>
         <h1 className="text-xl font-bold sm:text-2xl">Useful Links</h1>
         <p className="mt-3 text-sm text-gray-300">Home | About | Contact</p>
@@ -89,7 +89,7 @@ export default function Footer() {
 
       <div>
         <h1 className="text-xl font-bold sm:text-2xl">Follow me</h1>
-        <div className="mt-3 flex flex-wrap gap-3">
+        <div className="mt-4 flex flex-wrap gap-4">
           {socialLinks.map(({ name, href, Icon, className }) => (
             <a
               key={name}
@@ -98,7 +98,7 @@ export default function Footer() {
               rel="noreferrer"
               aria-label={name}
               title={name}
-              className={`flex h-10 w-10 items-center justify-center rounded-full transition ${className}`}
+              className={`flex h-12 w-12 items-center justify-center rounded-full transition sm:h-11 sm:w-11 ${className}`}
             >
               <Icon />
             </a>
