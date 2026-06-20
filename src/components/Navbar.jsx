@@ -12,7 +12,7 @@ export default function Navbar() {
     }`;
 
   return (
-    <nav className="m-2 flex min-h-16 flex-row items-start justify-between gap-2 bg-gray-800 p-3 text-white sm:items-center">
+    <nav className="m-2 flex min-h-16 flex-row items-center justify-between gap-2 bg-gray-800 p-3 text-white">
       {/* Left side links and Search Bar */}
       <div className="flex min-w-0 flex-1 items-center gap-2">
          <Link 
@@ -39,7 +39,7 @@ export default function Navbar() {
       </div>
       
       {/* Right side links */}
-      <div className="flex max-w-[56%] flex-1 flex-wrap items-center justify-end gap-2">
+      <div className="flex max-w-[56%] flex-1 flex-nowrap items-center justify-start gap-2 overflow-x-auto sm:max-w-none sm:justify-end">
          <NavLink 
            to="/" 
            className={navLinkClass}
