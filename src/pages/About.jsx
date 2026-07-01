@@ -77,7 +77,7 @@ export default function About({ mediaItems }) {
          </p>
           <h1 className="font-bold pl-16 text-3xl underline decoration-black mt-2">My University Life</h1>
            <p className="text-xl pl-16 pr-16 mt-2">
-            In 2033 I started teaching in Sun Rise Public School as I was unable to afford Univesity Education expenditures.
+            In 2023 I started teaching in Sun Rise Public School as I was unable to afford Univesity Education expenditures.
             This time I got another golden oppurtunity again to successfully got another fully funded Scholorship in Akhuwat College Kasuer in the
             department of BS information Technologies.
             There I found a dynamic Society and diverse Environment which capable me to be confident and speak and share my ideas with 
