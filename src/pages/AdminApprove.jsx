@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { collection, query, where, getDocs, doc, updateDoc } from "firebase/firestore";
+import {
+  collection,
+  query,
+  where,
+  getDocs,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "../firebase";
 import { useAuth } from "../context/AuthContextValue";
 
@@ -75,22 +82,30 @@ export default function AdminApprove() {
   }
 
   return (
-    <div className="mx-auto mt-10 w-full max-w-3xl px-4">
-      <h1 className="mb-6 text-3xl font-bold">Pending Posts</h1>
+    <div className="mx-auto mt-8 sm:mt-10 w-full max-w-3xl px-4">
+      <h1 className="mb-6 sm:mb-8 text-2xl sm:text-3xl font-bold">
+        Pending Posts
+      </h1>
 
-      {loading && <p>Loading pending posts...</p>}
-      {error && <p className="mb-4 text-red-600">{error}</p>}
+      {loading && <p className="text-center">Loading pending posts...</p>}
+      {error && (
+        <p className="mb-4 text-red-600 bg-red-50 px-4 py-2 rounded border-l-4 border-red-600">
+          {error}
+        </p>
+      )}
 
-      {!loading && pendingPosts.length === 0 && <p>No pending posts.</p>}
+      {!loading && pendingPosts.length === 0 && (
+        <p className="text-center">No pending posts.</p>
+      )}
 
       {pendingPosts.map((post) => (
         <div key={post.id} className="mb-6 border-b pb-6">
-          <h2 className="text-xl font-bold">{post.title}</h2>
+          <h2 className="text-lg sm:text-xl font-bold">{post.title}</h2>
           <p className="mb-2 text-sm text-gray-500">By {post.authorName}</p>
-          <p className="mb-3 whitespace-pre-line">{post.body}</p>
+          <p className="mb-3 text-base whitespace-pre-line">{post.body}</p>
           <button
             onClick={() => approvePost(post.id)}
-            className="rounded bg-green-700 px-4 py-2 text-white"
+            className="rounded bg-blue-600 px-4 py-2 text-white font-semibold hover:bg-blue-700 active:bg-blue-800 transition border-2 border-blue-600 cursor-pointer"
           >
             Approve
           </button>

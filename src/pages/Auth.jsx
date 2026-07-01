@@ -32,8 +32,8 @@ export default function Auth() {
   };
 
   return (
-    <div className="flex flex-col items-center mt-12">
-      <h1 className="text-3xl font-bold mb-6">
+    <div className="flex flex-col items-center mt-8 sm:mt-12 px-4">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
         {isLogin ? "Log In" : "Sign Up"}
       </h1>
 
@@ -46,7 +46,7 @@ export default function Auth() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="border rounded px-4 py-2"
+          className="border-2 border-gray-300 rounded px-4 py-2 text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"
           required
         />
 
@@ -56,13 +56,13 @@ export default function Auth() {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="border rounded px-4 py-2 w-full pr-10"
+            className="border-2 border-gray-300 rounded px-4 py-2 w-full pr-10 text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"
             required
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition"
           >
             {showPassword ? "🙈" : "👁️"}
           </button>
@@ -72,17 +72,17 @@ export default function Auth() {
 
         <button
           type="submit"
-          className="bg-gray-800 text-white py-2 rounded hover:bg-gray-700"
+          className="bg-blue-600 text-white py-2 px-4 rounded font-semibold hover:bg-blue-700 active:bg-blue-800 transition border-2 border-blue-600 cursor-pointer"
         >
           {isLogin ? "Log In" : "Sign Up"}
         </button>
       </form>
 
-      <p className="mt-4 text-sm">
+      <p className="mt-6 text-sm text-center">
         {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
         <button
           onClick={() => setIsLogin(!isLogin)}
-          className="text-blue-600 underline"
+          className="text-blue-600 hover:text-blue-800 font-semibold hover:underline transition"
         >
           {isLogin ? "Sign up" : "Log in"}
         </button>

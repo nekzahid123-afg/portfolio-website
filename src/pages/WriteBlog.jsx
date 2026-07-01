@@ -14,11 +14,11 @@ export default function WriteBlog() {
 
   if (!currentUser) {
     return (
-      <div className="text-center mt-12">
-        <p className="text-lg">You must be logged in to write a blog.</p>
+      <div className="flex flex-col items-center justify-center mt-12 px-4 py-8">
+        <p className="text-base sm:text-lg mb-6 text-center text-gray-700">You must be logged in to write a blog.</p>
         <button
           onClick={() => navigate("/auth")}
-          className="mt-4 bg-gray-800 text-white px-4 py-2 rounded"
+          className="bg-blue-600 text-white px-6 py-2 rounded font-semibold hover:bg-blue-700 active:bg-blue-800 transition border-2 border-blue-600 cursor-pointer"
         >
           Go to Login
         </button>
@@ -53,11 +53,11 @@ export default function WriteBlog() {
   };
 
   return (
-    <div className="flex flex-col items-center mt-10 px-4">
-      <h1 className="text-3xl font-bold mb-6">Write a Blog</h1>
+    <div className="flex flex-col items-center mt-8 sm:mt-10 px-4">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Write a Blog</h1>
 
       {success && (
-        <p className="text-green-600 mb-4">
+        <p className="text-green-600 mb-4 bg-green-50 px-4 py-2 rounded border-l-4 border-green-600">
           Submitted! Your post is pending approval.
         </p>
       )}
@@ -68,7 +68,7 @@ export default function WriteBlog() {
           placeholder="Blog title (Header)"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="border rounded px-4 py-2 text-lg font-bold"
+          className="border-2 border-gray-300 rounded px-4 py-2 text-base sm:text-lg font-semibold focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"
         />
 
         <textarea
@@ -76,14 +76,14 @@ export default function WriteBlog() {
           value={body}
           onChange={(e) => setBody(e.target.value)}
           rows={10}
-          className="border rounded px-4 py-2"
+          className="border-2 border-gray-300 rounded px-4 py-2 text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"
         />
 
-        {error && <p className="text-red-600 text-sm">{error}</p>}
+        {error && <p className="text-red-600 text-sm bg-red-50 px-4 py-2 rounded border-l-4 border-red-600">{error}</p>}
 
         <button
           type="submit"
-          className="bg-green-800 text-white py-2 rounded hover:bg-gray-700"
+          className="bg-blue-600 text-white py-2 px-4 rounded font-semibold hover:bg-blue-700 active:bg-blue-800 transition border-2 border-blue-600 cursor-pointer"
         >
           Submit for Approval
         </button>
